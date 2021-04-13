@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/all.css">
+    <title>Lenguajes</title>
+    
+</head>
+<body>
+    <header>
+        
+        <nav class="flex items-center justify-between flex-wrap bg-red-600 p-6">
+            <div class="flex items-center flex-shrink-0 text-white mr-6">
+                <i class="fas fa-cog mr-1 text-2xl"></i>
+              <span class="font-semibold text-2xl tracking-tight">Compiladores</span>
+            </div>
+            <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+              <div class="text-sm lg:flex-grow">
+                <a href="index.html" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 text-lg hover:text-white mr-4">
+                  Alfabetos
+                </a>
+                <a href="lenguaje.html" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 text-lg hover:text-white mr-4">
+                  Lenguajes
+                </a>
+                <a href="palabras.html" class="block mt-4 lg:inline-block lg:mt-0 text-teal-200 text-lg hover:text-white">
+                  Palabras
+                </a>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <div class="container mx-auto my-10 ">
+        <div class="flex  justify-center">
+            <div class="flex-1 box-border p-10 border-4 max-w-md rounded overflow-hidden shadow-lg my-2 mr-10 ">
+                <form id="formulario">
+                    <h2 class="font-bold text-xl mb-2 text-center">Ingrese</h2>
+                    <p>Para ingresar un vacio coloque "λ"</p>
+                    <br>
+                    <label for="lenguaje1">Ingresar Lenguaje 1:</label>
+                    <input type="text" id="lenguaje1" name="lenguaje1" placeholder="a,b,c" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 pl-2">
+                    <small class="text-gray-600 text-opacity-50">Separar por comas</small>
+                    <br>
+                    <br>
+                    <label for="lenguaje2">Ingresar Lenguaje 2:</label>
+                    <input type="text" id="lenguaje2" name="lenguaje2" placeholder="b,c,d" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 pl-2">
+                    <small class="text-gray-600 text-opacity-50">Separar por comas</small>
+                    <br>
+                    <br>
+                    <label for="potencia">Ingresar Potencia:</label>
+                    <input type="number" id="potencia" name="potencia" min="0" max="5" class="mt-1 block w-full border-none bg-gray-100 h-11 rounded-xl shadow-lg hover:bg-blue-100 focus:bg-blue-100 focus:ring-0 pl-2">
+                    <small class="text-gray-600 text-opacity-50">Por defecto 1 y maximo 5 </small>
+                    <div class="mt-7">
+                        <button type="submit" class="bg-blue-500 w-full py-3 rounded-xl text-white shadow-xl hover:shadow-inner focus:outline-none transition duration-500 ease-in-out  transform hover:-translate-x hover:scale-105">
+                            Calcular
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="flex-1 box-border p-10 border-4 max-w-md rounded overflow-y-scroll shadow-lg my-2 ">
+                <h2 class="font-bold text-xl mb-2 text-center">Resultado De Operaciones</h2>
+                
+                    <div class="space-y-4 mt-8"> 
+                        <div class="flow-root">
+                            <span class="inline-flex bg-pink-600 text-white rounded-full h-6 px-3 justify-center items-center my-4">Union</span>
+                            <p id="union"></p>
+                        </div>
+                        <div class="flow-root">
+                            <span class="inline-flex bg-purple-600 text-white rounded-full h-6 px-3 justify-center items-center my-4">Interseccion</span>
+                            <p id="interseccion"></p>
+                        </div>
+                        <div class="flow-root">
+                            <span class="inline-flex bg-indigo-600 text-white rounded-full h-6 px-3 justify-center items-center my-4">Diferencia</span>
+                            <p id="diferencia"></p>
+                        </div>
+                        <div class="flow-root">
+                            <span class="inline-flex bg-blue-600 text-white rounded-full h-6 px-3 justify-center items-center my-4">Concatenacion</span>
+                            <p id="concatenacion"></p>
+                        </div>
+                        <div class="flow-root">
+                            <span class="inline-flex bg-green-600 text-white rounded-full h-6 px-3 justify-center items-center my-4">Potencia</span>
+                            <p id="rPotencia"></p>
+                        </div>
+                        <div class="flow-root">
+                            <span class="inline-flex bg-yellow-600 text-white rounded-full h-6 px-3 justify-center items-center my-4">Inverso</span>
+                            <p id="inverso"></p>
+                        <div class="flow-root">
+                            <span class="inline-flex bg-red-600 text-white rounded-full h-6 px-3 justify-center items-center my-4">Cardinalidad</span>
+                            <p id="cardinalidad"></p>
+                        </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="relative bg-gray-700 text-gray-50 fixed inset-x-0 bottom-0 p-4 text-xl flex justify-between">
+        <div>
+          &copy; 2021 Leonardo Ariza Tetay 
+        </div>
+        <div class="space-x-1">
+            <i class="fab fa-instagram bg-pink-700 p-1"></i>
+            <i class="fab fa-facebook bg-blue-700 p-1"></i>
+            <i class="fa fa-twitter bg-blue-500 p-1"></i>
+            <i class="fa fa-youtube bg-red-700 p-1"></i>
+        </div>
+      </footer>
+
+    <script src="js/index.js"></script>
+    <script src="js/lenguajes.js"></script>
+    <script src="https://kit.fontawesome.com/ca0e90035e.js" crossorigin="anonymous"></script>
+</body>
+</html>
